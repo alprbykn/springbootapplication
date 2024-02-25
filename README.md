@@ -13,6 +13,13 @@ using MongoDB database.
 ### How to Run
 1. Download the project
 2. Import as Maven Project
-3. Right click on `BookStoreApplication` java class and select `run`
+3. Right click on `BankApplication` java class and select `run`
 4. Open browser and go to `http://localhost:8081/users.html` to see list of users
+5. You can create/update/delete users
+
+ ### How to Run2
+1. Download the project
+2. Import as Maven Project
+3. Edit configuration and select BankApplication
+4. Run the application
 5. You can create/update/delete users

@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface TransactionRepository extends MongoRepository<Transaction, Long> {
     List<Transaction> findByFromIdOrToId(String fromId, String toId);
+
     List<Transaction> findByFromIdOrToIdOrderByTransactionDateDesc(String fromId, String toId);
 }

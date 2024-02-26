@@ -28,9 +28,10 @@ public class AccountService {
 
     public List<Account> searchAccounts(String ownerId, String number, String name) {
         // Implement search logic here, considering ownerId, number, and name filters
-        if(number!=null){
+        if (number != null) {
             return getAccountByNumber(number);
-        }if(name!=null){
+        }
+        if (name != null) {
             return getAccountByName(name);
         }
         return accountRepository.findAll();
@@ -38,17 +39,21 @@ public class AccountService {
 
     public Optional<Account> getAccountById(String id) {
         return accountRepository.findById(id);
-    }public List<Account> getAccountByName(String name) {
+    }
+
+    public List<Account> getAccountByName(String name) {
         return accountRepository.findByName(name);
-    }public List<Account> getAccountByNumber(String number) {
+    }
+
+    public List<Account> getAccountByNumber(String number) {
         return accountRepository.findByNumber(number);
     }
 
     public Account updateAccount(Account account) {
         Account updated = getAccountById(account.getId()).get();
-            updated.setBalance(account.getBalance());
-            updated.setNumber(account.getNumber());
-            updated.setName(account.getName());
+        updated.setBalance(account.getBalance());
+        updated.setNumber(account.getNumber());
+        updated.setName(account.getName());
 
 
         return accountRepository.save(account);

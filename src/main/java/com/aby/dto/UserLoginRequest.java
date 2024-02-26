@@ -9,7 +9,8 @@ public class UserLoginRequest {
 
     // Constructors, getters, and setters
 
-    public UserLoginRequest() {}
+    public UserLoginRequest() {
+    }
 
     public UserLoginRequest(String username, String password) {
         this.username = username;

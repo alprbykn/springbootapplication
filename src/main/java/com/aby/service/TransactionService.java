@@ -1,4 +1,5 @@
 package com.aby.service;
+
 import com.aby.model.Transaction;
 import com.aby.repo.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TransactionService {
@@ -23,12 +23,11 @@ public class TransactionService {
     }
 
     public List<Transaction> getTransactionHistoryForAccount(String accountId) {
-        try{
+        try {
             return transactionRepository.findByFromIdOrToIdOrderByTransactionDateDesc(accountId, accountId);
 
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             return new ArrayList<>();
         }
-        }
+    }
 }
